@@ -14,7 +14,7 @@ if (username && password && !db.prepare('SELECT username FROM admins WHERE usern
   db.prepare('INSERT INTO admins VALUES(?,?)').run(username, hashPassword(password));
 }
 const port=process.env.PORT||5000;
-app.listen(port,'127.0.0.1',()=>{
+app.listen(port,'0.0.0.0',()=>{
   console.log(`Pratap Palace API: http://localhost:${port}`);
   startGuestNotifications();
 });
