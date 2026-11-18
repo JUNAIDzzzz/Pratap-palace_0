@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@theme { --color-brown: #4b3025; --color-offwhite: #f3ebde; --color-sand: #dfc9ae; --color-muted: #79604d; --color-caramel: #a57a52; --font-sans: 'DM Sans', sans-serif; --font-display: 'Playfair Display', serif; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { margin: 0; background: var(--color-offwhite); color: #4b3025; }
+button, a, input, select { -webkit-tap-highlight-color: transparent; }
+button, a { touch-action: manipulation; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid #a57a52; outline-offset: 4px; }
+::selection { background: #e5d4c2; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+
+.hero-video-frame { position: absolute; left: 50%; top: 50%; width: max(100svh, 43.28vw); height: max(100vw, 231.1svh); overflow: hidden; transform: translate(-50%, -50%) rotate(90deg); pointer-events: none; }
+/* Crop the video's baked-in caption before rotating it into landscape. */
+.hero-video-frame > video { width: 129.87%; max-width: none; height: 100%; object-fit: fill; }
+
+/* Dim the complete website beneath the full-screen gallery. */
+:root { --gallery-dim: 0; }
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  pointer-events: none;
+  background: #211914;
+  opacity: var(--gallery-dim);
+}
+
+.description-panel-content {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none;
+}
+.description-panel-content::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+.description-panel-content::-webkit-scrollbar-track,
+.description-panel-content::-webkit-scrollbar-thumb,
+.description-panel-content::-webkit-scrollbar-button {
+  display: none !important;
+  background: transparent !important;
+}

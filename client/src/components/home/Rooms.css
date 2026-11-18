@@ -1,0 +1,81 @@
+.palace-room-slider-pills { display: none; }
+
+@media (max-width: 1023px) {
+  .palace-home-rooms {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    height: 100dvh;
+    min-width: 0;
+    padding: calc(4rem + env(safe-area-inset-top, 0px) + .75rem) clamp(1.25rem, 5vw, 2.5rem) clamp(1rem, 3dvh, 2rem);
+    scroll-margin-top: 0;
+  }
+
+  .palace-home-rooms .palace-rooms-heading {
+    flex: 0 0 auto;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    padding-bottom: .75rem;
+  }
+
+  .palace-home-rooms .palace-rooms-heading h2 { font-size: clamp(1.85rem, 6vw, 2.75rem); }
+  .palace-home-rooms .palace-rooms-heading p { max-width: 34ch; font-size: .875rem; line-height: 1.5; }
+  .palace-home-rooms .palace-room-slider { flex: 1; min-height: 0; }
+  .palace-home-rooms .palace-room-slider > article { display: grid; grid-template-rows: minmax(0, 1fr) auto; min-height: 0; }
+  .palace-home-rooms .palace-room-slider > article > div:first-child { min-height: 0; aspect-ratio: auto; }
+  .palace-home-rooms .palace-room-slider > article > div:last-child { padding: 1rem; }
+  .palace-home-rooms .palace-room-slider h3 { font-size: 1.4rem; }
+  .palace-home-rooms .palace-room-slider h3 + p { margin-block: .5rem .75rem; font-size: .8125rem; line-height: 1.5; }
+  .palace-home-rooms .palace-room-slider article button { margin-top: .75rem; padding-top: .75rem; }
+  .palace-home-rooms .palace-room-slider-pills { flex: 0 0 auto; margin-top: .25rem; }
+  .palace-room-slider {
+    display: grid;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    gap: 1.25rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .palace-room-slider::-webkit-scrollbar { display: none; }
+  .palace-room-slider > article { min-width: 0; scroll-snap-align: start; }
+
+  .palace-room-slider-pills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .15rem;
+    margin-top: .75rem;
+  }
+
+  .palace-room-slider-pills button {
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    place-items: center;
+    border-radius: .3rem;
+  }
+
+  .palace-room-slider-pills span {
+    width: .45rem;
+    height: .45rem;
+    border-radius: 999px;
+    background: #a57a5266;
+    transition: width .2s ease, background .2s ease;
+  }
+
+  .palace-room-slider-pills button[aria-current="true"] span { width: 1.65rem; background: #4b3025; }
+  .palace-room-slider-pills button:hover span { background: #79604d; }
+}
+
+@media (max-width: 1023px) and (orientation: landscape) {
+  .palace-home-rooms .palace-rooms-heading { flex-direction: row; align-items: center; gap: 1rem; margin-bottom: .75rem; }
+  .palace-home-rooms .palace-rooms-heading h2 { font-size: 1.75rem; }
+  .palace-home-rooms .palace-room-slider > article { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); grid-template-rows: minmax(0, 1fr); }
+  .palace-home-rooms .palace-room-slider > article > div:last-child { justify-content: center; padding: .75rem 1rem; }
+  .palace-home-rooms .palace-room-slider h3 + p { flex: initial; }
+}

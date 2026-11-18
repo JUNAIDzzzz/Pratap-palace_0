@@ -1,0 +1,1 @@
+{"name":"pratap-palace","private":true,"version":"1.0.0","workspaces":["client","server"],"scripts":{"dev":"concurrently -n CLIENT,SERVER -c green,blue \"npm run dev -w client\" \"npm run dev -w server\"","build":"npm run build -w client","start":"npm run start -w server","test":"npm run test -w server"},"devDependencies":{"concurrently":"^9.1.2"}}

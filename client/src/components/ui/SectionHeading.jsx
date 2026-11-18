@@ -1,0 +1,1 @@
+export default function SectionHeading({ eyebrow, title, children }) { return <div className="max-w-xl"><p className="mb-4 text-xs font-semibold uppercase tracking-[.24em] text-caramel">{eyebrow}</p><h2 className="font-display text-4xl leading-tight md:text-5xl">{title}</h2>{children && <p className="mt-5 leading-7 text-muted">{children}</p>}</div>; }
