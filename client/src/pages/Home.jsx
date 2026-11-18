@@ -78,7 +78,7 @@ export default function Home() {
   }
 
   return <>
-    <Header mobileHeroBrand/>
+    <Header/>
     <main>
       <HomeHero room={room}/>
       <IntroDescription/>
