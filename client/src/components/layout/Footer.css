@@ -187,8 +187,8 @@ a.palace-footer-social-icon:hover {
     min-height: 100dvh;
     padding-inline: clamp(1.25rem, 5vw, 2.5rem);
   }
-  .palace-footer-inner { min-height: calc(100dvh - 1px); display: flex; flex-direction: column; }
-  .palace-footer-main { flex: 1; grid-template-columns: minmax(0, 1fr); gap: 1.25rem; padding-block: clamp(1.25rem, 4dvh, 2.5rem); }
+  .palace-footer-inner { min-height: calc(100dvh - 1px); display: flex; flex-direction: column; justify-content: center; }
+  .palace-footer-main { grid-template-columns: minmax(0, 1fr); align-content: start; gap: 1.5rem; padding-block: 1.5rem; }
   .palace-footer-title { margin-top: .75rem; font-size: clamp(2rem, 7vw, 3.5rem); }
   .palace-footer-copy { margin-top: .75rem; font-size: .8125rem; line-height: 1.6; }
   .palace-footer-actions { margin-top: .75rem; }
